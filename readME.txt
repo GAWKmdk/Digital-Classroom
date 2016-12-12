@@ -12,7 +12,7 @@ Application features:
 Currently in-build
 
     
-    collaborative drawing board
+   (done) collaborative drawing board
     user accounts built around twitter login
 
 
