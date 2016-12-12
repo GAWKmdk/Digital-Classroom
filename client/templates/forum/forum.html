@@ -1,0 +1,105 @@
+<template name="forum">
+
+<div class="col-lg-12" >
+  <div class="page-header page-heading">
+    <h1 class="pull-left">Discussion Board for Activity Groups</h1>
+   
+    <div class="clearfix"></div>
+  </div>
+  
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Important</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Subject</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Creator </th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Recent Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Frequently Asked Questions</a><br><small>Answers to course terms and conditions</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Course Terms</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Teacher</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Mr. Kaliqual</a><br><small><i class="fa fa-clock-o"></i> 1 week ago</small></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Suggested</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Subject</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Creator</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Recent Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center"><i class="fa fa-book fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Text Book</a><br><small>Publisher Version 12</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Chapter 3</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Anne Connel</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Mark Bennat</a><br><small><i class="fa fa-clock-o"></i> 5 minutes ago</small></td>
+      </tr>
+      <tr>
+        <td class="text-center"><i class="fa fa-magic fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Summary Formats</a><br><small>For exercises 16-31</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Chapter 7</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">Darrel Keisyn</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Teacher</a><br><small><i class="fa fa-clock-o"></i> 1 month ago</small></td>
+      </tr>
+    </tbody>
+  </table>
+    
+    
+         <ol class="breadcrumb pull-right where-am-i">
+      <li href="/create-post"><button>Create a Discussion</button></li>
+      <li class="active"><button>Report</button></li>
+    </ol>
+    
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Active Groups</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Creator</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Recent Activities</th>
+      </tr>
+    </thead>
+      
+      
+    <tbody>
+        
+       {{#each posts}}
+        <tr>
+        {{> postRow post=this showContent=false}}
+            </tr>
+    {{else}}
+        <tr>
+        <label>You are not logged in. No topics are viewable.</label>
+        </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
+
+    
+</template>

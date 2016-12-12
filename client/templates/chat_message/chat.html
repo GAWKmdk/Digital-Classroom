@@ -1,0 +1,31 @@
+<template name="direct_chat">
+
+<h1>Example chat channel</h1>
+    <br>
+    <p>Perhaps move this to PenBoard to simplify usage and seperate it from discussion group boards. Also consider test-bot floating button?</p>
+    
+    {{> entryfield}}
+    <hr>
+    {{> messages}}
+
+</template>
+
+
+
+<template name="entryfield">
+    <input type="text" id="name" placeholder="Name" /> <input type="text" id="message" placeholder="Your Message" /> <button class="btn btn-default send"> Send</button>
+</template>
+
+<template name="messages">
+    <p>
+        <ul>
+        {{#each messages}}
+          {{#if isInRole 'admin'}}
+               <li><strong>Teacher:{{name}}</strong> says: {{message}}</li>
+              {{else}}
+              <li><strong>{{name}}</strong> says: {{message}}</li>
+        {{/if}}
+            {{/each}}
+            </ul>
+    </p>
+</template>

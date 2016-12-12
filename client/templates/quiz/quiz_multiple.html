@@ -1,0 +1,125 @@
+<template name="quiz_multiplechoice">
+
+<h1>Multiple Choice Test</h1>
+    <br>
+    <p>**Create collection and autoform for this**</p>
+    <div id="questionsDiv">
+
+    <!-- add autoform use schema for question single, multiple, use type to source true/flase or value radio buttons with a field for answer, show each test in _id with questions after submitted into collection quizes display user and score -->
+    
+    
+	<form> 
+		<fieldset id="question1">
+			<h3>How many states are there in the EU?</h3>
+			<input type="radio" name="states" value="10">10
+		  	<br>
+		  	<input type="radio" name="states" value="24">24	
+		  	<br>
+		  	<input type="radio" name="states" value="50" class="correctAns">50	
+	  	</fieldset>	
+		<fieldset id="question2">
+			<h3>What is the largest continent with home many residential homes?</h3>
+			<input type="radio" name="continents" value="4">4
+		  	<br>
+		  	<input type="radio" name="continents" value="7" class="correctAns">7	
+		  	<br>
+		  	<input type="radio" name="continents" value="10">10		
+		</fieldset>
+		
+		<fieldset id="question3">
+		 	<h3>How many legs does a spider have?</h3>
+			<input type="radio" name="insectLegs" value="6" class="correctAns">6
+		  	<br>
+		  	<input type="radio" name="insectLegs" value="3">3	
+		  	<br>
+		  	<input type="radio" name="insectLegs" value="8">8		
+		</fieldset>
+		
+		<fieldset id="question4">
+		 	<h3>What is the capital of Belgium?</h3>
+			<input type="radio" name="spain" value="LISBON">Lisbon
+		  	<br>
+		  	<input type="radio" name="spain" value="MADRID" class="correctAns">Madrid	
+		  	<br>
+		  	<input type="radio" name="spain" value="PARIS">Paris		
+		</fieldset>
+		
+		<fieldset id="question5">
+			<h3>In which hemisphere can you find llamas?</h3>
+			<input type="radio" name="polarBears" value="NORTHERN" class="correctAns">Northern Hemisphere
+		  	<br>
+		  	<input type="radio" name="polarBears" value="SOUTHERN">Southern Hemisphere	
+	  	</fieldset>
+        <br>
+        
+	  	<button type="button" id="submit">Submit Answers</button>
+        </form>
+</div>
+<div id="resultsDiv">
+
+</div>
+    
+        
+<script>
+        
+        // 5 Question quiz
+// Show multiple choice with radio buttons
+// When clicking submit, hide the current question and show the next question
+// At the end, show how many questions they got right out of 5
+
+var correctAnswers;
+function checkAnswer(question){
+	
+	var questionArray = document.getElementsByName(question);
+	var questionResponse;
+	var correctAnswer;
+
+	for(var i = 0; i < questionArray.length; i++){
+	    
+		if ( questionArray[i].checked ) {
+		    questionResponse = questionArray[i].value;
+
+		}
+
+		if ( questionArray[i].classList.contains("correctAns") ) {
+		   	correctAnswer = questionArray[i].value	   
+		}	    
+	    	
+	}
+
+	if ( questionResponse === correctAnswer ) {
+	  	correctAnswers += 1;
+	}
+
+}
+
+function checkAllAnswers() {
+		correctAnswers = 0;
+
+	    checkAnswer("states");
+	    checkAnswer("continents");
+	    checkAnswer("insectLegs");
+	    checkAnswer("spain");
+	    checkAnswer("polarBears");
+
+	    html = "<h4> You got " + correctAnswers + " questions correct!";
+	    print(html);
+}
+
+
+var submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", checkAllAnswers);
+
+function print(message) {
+	var output = document.getElementById("resultsDiv");
+	output.innerHTML = message;
+}
+
+
+
+
+
+        </script>        
+        
+</template>

@@ -1,0 +1,70 @@
+<template name="header1">
+
+    <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Brand</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class=""><a href="/">Home</a></li>
+      <li><a href="#">Discussion Board</a></li>
+        <li class=""><a href="#">Study Material</a></li>
+      <li><a href="#">Pen Board</a></li>
+        <li><a href="#">Quiz</a></li>
+        <li><a href="#">Direct Chat</a></li>
+        <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+<li><a href="#">User Account</a></li>
+<li><a href="#">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    <!--
+      <div class="col-sm-3 col-md-3">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+    </div>
+      -->
+    <ul class="nav navbar-nav navbar-right">
+      <li>{{loginButtons}}</li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">User Profile</a></li>
+          <li><a href="#">Logout</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+</template>
+
+<template name="header">
+
+ <div class="jumbotron" style="text-align:center;">   
+<h1> Template Application </h1>
+<p><strong>Template Prototype of Digital Lecture Application</strong></p>
+    <button class="success">Notif Success</button> | <button class="warning">Notif Warning</button> | <button class="info">Notif Info</button> | <button class="error">Notif Error</button> |
+    {{>loginButtons}}
+    
+    </div>
+
+</template>

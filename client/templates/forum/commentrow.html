@@ -1,0 +1,30 @@
+<template name="commentRow">
+    <div class="row">
+        <div class="col-md-2 center-text">
+            <div class="row">
+                <i class="fa fa-arrow-up upvote-comment"></i>
+            </div>
+            <div class="row">
+                {{numDifference}}
+            </div>
+            <div class="row">
+                <i class="fa fa-arrow-down downvote-comment"></i>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <label>{{owner}}</label>
+            </div>
+        </div>
+        
+        <div class="col-md-2">
+            <div class="row">
+                <label>Title</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <h5>{{content}}</h5>
+        </div>
+    </div>
+</template>

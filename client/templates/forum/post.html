@@ -1,0 +1,16 @@
+<template name="post">
+    {{> postRow post=post showContent=true}}
+    <!--{{#if currentUser}}-->
+    {{> newComment post._id}}
+   <!-- {{/if}} -->
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Comments and Replies</h4>
+        </div>
+    </div>
+    {{#each comments}}
+        {{>commentRow this}}
+        {{else}}
+            <label>There are no Comments or Replies !</label>
+    {{/each}}
+</template>

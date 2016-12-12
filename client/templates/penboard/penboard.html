@@ -1,0 +1,66 @@
+<template name="pen_board">
+
+<h1>Class Marker Board</h1>
+    <br>
+    {{>drawingApp}}
+   
+</template>
+
+
+<template name='drawingApp'>    
+ 
+    
+    <div class="container">
+
+        {{> controls}}
+
+
+        {{> canvas}}
+    </div>
+ 
+</template>
+
+<template name="canvas">
+    <div id="canvas-wrapper" class="well">
+        <div id="canvas"></div>
+    </div>
+</template>
+
+<template name="controls">
+    <div class="controls">
+        <button class="btn btn-warning pull-left" id="clear"><i class="fa fa-trash"></i>Clear</button>
+
+        <button class="btn btn-success pull-right" id="save"><i class="fa fa-floppy-o"></i>Save</button>
+
+        <div class="center-block text-center">
+            <!-- Color -->
+            <div class="btn-group">
+                <div class="input-group color">
+                    <span class="input-group-addon">Color</span>
+                    <input type="text" id="color-input" class="form-control" value="#000000"/>
+                </div>
+            </div>
+
+            <!-- Stroke -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-paint-brush"></i>Stroke <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="stroke-style">
+                    <li>
+                        <p>Thickness</p>
+                        <div id="thickness-slider"></div>
+                        <input type="number" class="form-control" id="thickness-input" value="2">
+                    </li>
+                    <li>
+                        <p>Opacity</p>
+                        <div id="opacity-slider"></div>
+                        <input type="number" class="form-control" id="opacity-input" step="0.01" value="1.00">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</template>

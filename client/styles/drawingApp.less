@@ -1,0 +1,73 @@
+/******** Drawing controls ********/
+
+.controls {
+    margin-bottom: 40px;
+
+    .btn, .btn-group {
+        margin-right: 10px;
+    }
+
+    i.fa {
+        margin-right: 10px;
+    }
+
+    .ui-slider-horizontal {
+        height: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .ui-slider-handle {
+        top: -(16px - 2px)/2;
+        background: #fff;
+        border-radius: 100px;
+    }
+}
+
+#stroke-style {
+    padding: 20px 0;
+    width: 250px;
+
+    li {
+        overflow: auto;
+        padding: 10px 20px 10px 20px;
+        border-bottom: 1px solid #e5e5e5;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .ui-slider-horizontal {
+        float: left;
+        width: 65%;
+        margin-top: 16px;
+    }
+
+    input {
+        width: 30%;
+        margin-left: 5%;
+        padding-left: 6px;
+        padding-right: 6px;
+        float: left;
+    }
+}
+
+
+/******** Drawing canvas ********/
+
+#canvas {
+    overflow: auto;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
